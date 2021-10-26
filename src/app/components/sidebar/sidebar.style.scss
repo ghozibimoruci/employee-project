@@ -1,0 +1,21 @@
+.sidebar-background{
+    background-color:maroon;
+    color: white;
+    height: 100vh;
+}
+
+.app-title{
+    margin: 0;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.menu-list{
+    padding: 20px 40px;
+    cursor: pointer;
+}
+
+.menu-list:hover{
+    color: maroon;
+    background-color: white;
+}

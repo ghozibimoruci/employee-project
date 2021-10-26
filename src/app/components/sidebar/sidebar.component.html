@@ -1,0 +1,6 @@
+<div class="sidebar-background">
+    <h1 class="app-title">エプシロン</h1>
+    <div *ngFor="let menu of menuList">
+        <div class="menu-list" [routerLink]="menu.routerLink">{{menu.menuName}}</div>
+    </div>
+</div>

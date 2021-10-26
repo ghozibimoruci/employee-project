@@ -1,0 +1,7 @@
+<form [formGroup] = "registrationForm" submit="onSubmit()">
+    <label for="username">Username</label>
+    <input formControlName="username" id="username">
+    <label for="email">Email</label>
+    <input formControlName="email" id="email">
+    <button type="submit" [disabled]="!registrationForm.valid">Submit</button>
+</form>
