@@ -1,3 +1,15 @@
-<div>
-    
+<div class="wrapper">
+    <div class="card">
+        <div class="web-logo">ε</div>
+        <div>
+            <input #userNameField class="input-epsilon" [(ngModel)]="userName" type="text" placeholder="Username" autocomplete="off" required>
+            <input #passWordField class="input-epsilon" [(ngModel)]="passWord" [type]="seePassWord?'text':'password'" placeholder="Password" autocomplete="off" required>
+            <div class="visible-password">See Password <input type="checkbox" [(ngModel)]="seePassWord"></div>
+        </div>
+        <div>
+            <button class="button-epsilon" (click)="loginUser()">
+                Login
+            </button>
+        </div>
+    </div>
 </div>

@@ -1,0 +1,72 @@
+.wrapper{
+    background: linear-gradient(310deg, white 5%, maroon 200%);
+    height: 100vh;
+    display: flex;
+}
+
+.card{
+    border-radius: 4px;
+    border: solid 1px maroon;
+    width: 300px;
+    padding: 30px 20px;
+    margin: auto;
+    background-color: white;
+    box-shadow:0 0 8px 0px rgba(0,0,0,1)
+}
+
+.web-logo{
+    font-size: 110px;
+    background: linear-gradient(160deg, white 5%, maroon 200%);
+    border: solid 10px maroon;
+    color: maroon;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    border-radius: 50%;
+    font-weight: 600;
+    font-family: fangsong;
+    margin: 20px auto;
+    box-shadow:0 0 6px 0 rgba(0,0,0,1)
+}
+
+.input-epsilon{
+    border: solid 1px maroon;
+    border-radius: 4px;
+    padding: 10px 5px;
+    width: calc(100% - 20px);
+    margin: 5px auto;
+    display: block;
+}
+
+.visible-password{
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+input.input-epsilon::after{
+    background:none;
+}
+
+.button-epsilon{
+    background: linear-gradient(180deg, maroon 40%, white 200%);
+    border: none;
+    border-radius: 5px;
+    width: 90%;
+    margin: 10px auto;
+    outline: none;
+    color: white;
+    padding: 20px 0 ;
+    display: block;
+}
+
+.snackbar-epsilon{
+    color: maroon;
+}
+
+@media only screen and (max-width: 900px) {
+    .card{
+        width: 80vw;
+    }    
+}
