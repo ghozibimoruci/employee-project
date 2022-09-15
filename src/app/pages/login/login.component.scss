@@ -1,0 +1,80 @@
+.wrapper-login{
+    background: linear-gradient(310deg, white 5%, #B00225 200%);
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    min-height: 100%;
+    display: flex;
+    width: 100%;
+}
+
+.card{
+    box-shadow: 0 0 8px 0px #B00225;
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px 20px;
+    width: 350px;
+    margin: 2%;
+}
+
+.web-logo{
+    font-size: 110px;
+    background: linear-gradient(160deg, white 5%, #B00225 200%);
+    border: solid 10px #B00225;
+    color: #B00225;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    border-radius: 50%;
+    font-weight: 600;
+    font-family: fangsong;
+    margin: 20px auto;
+    box-shadow:0 0 6px 0 rgba(0,0,0,1);
+    line-height: 110px;
+}
+
+.input-epsilon{
+    border: solid 1px #B00225;
+    border-radius: 4px;
+    padding: 10px 5px;
+    width: calc(100% - 20px);
+    margin: 5px auto;
+    display: block;
+}
+
+.visible-password{
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+input.input-epsilon::after{
+    background:none;
+}
+
+.button-epsilon{
+    background-color: #B00225;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    outline: none;
+    color: white;
+    padding: 20px 0 ;
+    display: block;
+}
+
+.snackbar-epsilon{
+    color: #B00225;
+}
+
+::ng-deep #password-login .mat-form-field-subscript-wrapper{
+    padding: 0;
+    margin-top: 0;
+}
+
+@media only screen and (max-width: 900px) {
+    .card{
+        width: 80vw;
+    }    
+}

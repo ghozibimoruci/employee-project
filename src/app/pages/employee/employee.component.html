@@ -1,0 +1,79 @@
+<div class="employee-page" *ngIf="showList">
+    <div class="employee-title">
+        Employee List
+    </div>
+    <div class="employee-filter">
+        <div class="filter-wrapper">
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label class="placeholder">Sort By</mat-label>
+                <mat-select [(ngModel)]=sortBy (selectionChange)="selectSortBy()">
+                    <mat-option *ngFor="let opt of sortByList" [value]="opt.value">{{opt.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="filter-wrapper">
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label class="placeholder">Search Name</mat-label>
+                <input matInput type="text" [(ngModel)]="searchName" (ngModelChange)="searchNameAction()">
+            </mat-form-field>
+        </div>
+        <div class="filter-wrapper">
+            <button class="add-employee-button" (click)="addEmployee()">
+                Add New Employee
+            </button>
+        </div>
+    </div>
+    <div class="employee-list">
+        <div class="employee-list-wrapper header">
+            <div class="employee-name">
+                Name
+            </div>
+            <div class="employee-email">
+                Email
+            </div>
+            <div class="employee-birthdate">
+                Birth Date
+            </div>
+            <div class="employee-group">
+                Group
+            </div>
+            <div class="employee-status">
+                Status
+            </div>
+        </div>
+        <div class="employee-list-wrapper" *ngFor="let emp of employeeList">
+            <div class="employee-name">
+                {{emp.firstName}} {{emp.lastName}}
+            </div>
+            <div class="employee-email">
+                {{emp.email}}
+            </div>
+            <div class="employee-birthdate">
+                {{emp.birthDate}}
+            </div>
+            <div class="employee-group">
+                {{emp.group}}
+            </div>
+            <div class="employee-status">
+                <div class="status-wrapper" [ngClass]="emp.status">
+                    {{emp.status | titlecase}}
+                </div>
+                <div class="button-wrapper">
+                    <div class="action-button-wrapper">
+                        <button class="action-button edit" (click)="editEmployee(emp)">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                    </div>
+                    <div class="action-button-wrapper">
+                        <button class="action-button delete" (click)="deleteEmployee(emp)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <pagination [pageIndex]="pageList" [sizeNtotal]="{size: sizeList, total: totalList}" (pageEvent)="changePage($event)"
+    ></pagination>
+</div>
+<employee-form *ngIf="!showList" [editedEmployee]="editedEmployee" (emitFormEmployee)="emitFormEmployee($event)"></employee-form>

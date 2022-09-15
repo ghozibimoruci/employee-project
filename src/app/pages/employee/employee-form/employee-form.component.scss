@@ -1,0 +1,43 @@
+.empoyee-form{
+    display: flex;
+    flex-wrap: wrap;
+}
+.empoyee-form>div{
+    padding: 0 16px;
+}
+.form-button{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 464px;
+    margin: auto;
+}
+.form-button>button{
+    margin: 16px;
+}
+.primary-button{
+  background-color: #B00225;
+  border: solid 2px #B00225;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #E0E0E0;
+  height: 54px;
+  width: 200px;
+}
+.secondary-button{
+  background: none;
+  border: solid 2px #B00225;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #B00225;
+  height: 54px;
+  width: 200px;
+}
+.primary-button:disabled{
+    background-color: #9E9E9E;
+    border: solid 2px #9E9E9E;
+}
+.secondary-button:disabled{
+    border: solid 2px #9E9E9E;
+    color: #9E9E9E;
+}

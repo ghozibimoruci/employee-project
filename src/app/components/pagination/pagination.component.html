@@ -1,0 +1,14 @@
+<div class="page-wrapper">
+    <div class="navigator-page">
+        {{(pageIndex*size)-(size-1)}} - {{(pageIndex*size)<(total)?(pageIndex*size):total}} of {{(total)}}
+    </div>
+    <button class="button-action" (click)="changePage(pageIndex-1)" [disabled]="pageIndex==1||disabled">
+        <mat-icon class="middle">keyboard_arrow_left</mat-icon>
+    </button>
+    <button class="page-option" (click)="changePage(data)" [disabled]="data=='...'||data==pageIndex||disabled" *ngFor="let data of pageListArray">
+        {{data}}
+    </button>
+    <button class="button-action" (click)="changePage(pageIndex+1)" [disabled]="pageIndex>=pageListArray[pageListArray.length-1]||disabled">
+        <mat-icon class="middle">keyboard_arrow_right</mat-icon>
+    </button>
+</div>

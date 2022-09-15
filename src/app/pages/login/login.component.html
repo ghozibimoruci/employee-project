@@ -1,15 +1,23 @@
-<div class="wrapper">
-    <div class="card">
-        <div class="web-logo">ε</div>
-        <div>
-            <input #userNameField class="input-epsilon" [(ngModel)]="userName" type="text" placeholder="Username" autocomplete="off" required>
-            <input #passWordField class="input-epsilon" [(ngModel)]="passWord" [type]="seePassWord?'text':'password'" placeholder="Password" autocomplete="off" required>
-            <div class="visible-password">See Password <input type="checkbox" [(ngModel)]="seePassWord"></div>
-        </div>
-        <div>
-            <button class="button-epsilon" (click)="loginUser()">
-                Login
-            </button>
-        </div>
-    </div>
+<div class="wrapper-login">
+  <div class="card">
+    <div class="web-logo">ε</div>
+    <form #loginForm="ngForm">
+      <mat-form-field class="w-100" appearance="outline">
+          <mat-label class="placeholder">Username</mat-label>
+          <input matInput [(ngModel)]="userName" name="userName" type="text" required>
+      </mat-form-field>
+      <mat-form-field class="w-100" appearance="outline" id="password-login">
+          <mat-label class="placeholder">Password</mat-label>
+          <input matInput [(ngModel)]="passWord" name="passWord" [type]="seePassWord?'text':'password'" required>
+          <mat-hint align="end">
+            <div class="visible-password">
+              See Password <input type="checkbox" name="seePassWord" [(ngModel)]="seePassWord">
+            </div>
+          </mat-hint>
+      </mat-form-field>
+      <button class="button-epsilon" type="submit" (click)="loginUser()">
+          Login
+      </button>
+    </form>
+  </div>
 </div>

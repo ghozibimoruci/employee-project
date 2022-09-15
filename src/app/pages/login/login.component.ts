@@ -1,16 +1,15 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { GuardService } from 'src/app/service/guard-service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  @ViewChild('userNameField') userNameField: ElementRef;
-  @ViewChild('passWordField') passWordField: ElementRef;
+  @ViewChild('userNameField', null) userNameField: ElementRef;
+  @ViewChild('passWordField', null) passWordField: ElementRef;
   focusField(fieldName: ElementRef){
     fieldName.nativeElement.focus();
   }
@@ -20,9 +19,8 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
-    if(GuardService){
-      this.router.navigateByUrl('home');
-    }
+    this.userName='ghozibimoruci';
+    this.passWord='ghozibimoruci';
   }
 
   loginUser(){
@@ -34,11 +32,11 @@ export class LoginComponent implements OnInit {
       this.focusField(this.passWordField);
     }else{
       if(this.userName == 'ghozibimoruci' && this.passWord == 'ghozibimoruci'){
-        localStorage.setItem('tokenLogin', JSON.stringify({
+        sessionStorage.setItem('tokenLogin', JSON.stringify({
           username: this.userName,
           password: this.passWord
         }));
-        setTimeout(()=>{this.router.navigateByUrl('/home');}, 200);
+        this.router.navigateByUrl('/employee');
       }else{
         this.openSnackBar('Your Username or Password are invalid!');
       }

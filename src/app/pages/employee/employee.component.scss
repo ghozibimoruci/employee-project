@@ -1,0 +1,111 @@
+.employee-page{
+    display: block;
+    padding: 30px 20px;
+}
+.employee-title{
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.employee-filter{
+    display: flex;
+    flex-wrap: wrap;
+}
+.filter-wrapper{
+    min-width: calc(100% / 3);
+    padding: 16px 16px;
+}
+.add-employee-button{
+    background-color: #B00225;
+    border: solid 2px #B00225;
+    height: 54px;
+    width: 100%;
+    border-radius: 8px;
+    color: #E0E0E0;
+    font-weight: 600;
+}
+.employee-list-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: solid 2px #9E9E9E;
+}
+.employee-list-wrapper.header{
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #b00225;
+    color: #E0E0E0;
+}
+.employee-list-wrapper>div{
+    padding: 16px 8px;
+}
+.employee-name{
+    width: 27%;
+    min-width: 200px;
+}
+.employee-email{
+    width: 23%;
+    min-width: 250px;
+}
+.employee-birthdate{
+    width: 20%;
+    min-width: 200px;
+}
+.employee-group{
+    width: 15%;
+    min-width: 200px;
+}
+.employee-status{
+    width: 15%;
+    min-width: 130px;
+    text-align: center;
+    color: #b00225;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.employee-list-wrapper.header>.employee-status{
+    color: #E0E0E0;
+}
+.status-wrapper{
+    padding: 8px;
+    font-weight: 600;
+    margin: 8px auto;
+    border-radius: 8px;
+    width: calc(100% - 60px);
+}
+.status-wrapper.active{
+    border: #B00225;
+    background-color: #B00225;
+    color: #E0E0E0;
+}
+.status-wrapper.inactive{
+    border: #9E9E9E;
+    background-color: #9E9E9E;
+    color: #E0E0E0;
+}
+.button-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    width: 60px;
+}
+.action-button-wrapper{
+    width: 50%;
+    text-align: center;
+}
+.action-button{
+    background: none;
+    border: none;
+    width: 30px;
+    height: 26px;
+    padding: 0 2px;
+    font-size: 24px;
+    line-height: 24px;
+}
+.action-button.edit{
+    color: #E3C902;
+}
+.action-button.delete{
+    color: #FF0000;
+}

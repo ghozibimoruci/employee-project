@@ -1,4 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.sidebar, .off-canvas-sidebar {
+  z-index: 200 !important;
+}
+
+.close.mat-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  background: red;
+  padding: 5px;
+  line-height: 14px;
+  min-width: auto;
+}
+
+.cdk-overlay-pane {
+  -webkit-transform: none!important;
+  transform: none!important;
+}
+.w-90{min-width: 90% !important;}
+.w-80{min-width: 80% !important;}
+.w-70{min-width: 70% !important;}
+.w-60{min-width: 60% !important;}
+.w-40{min-width: 40% !important;}
+.w-30{min-width: 30% !important;}
+.w-20{min-width: 20% !important;}
+.w-10{min-width: 10% !important;}
+
+.primary-button{
+  background-color: #B00225;
+  border: solid 2px #B00225;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #E0E0E0;
+  height: 54px;
+  width: 100%;
+}
+.secondary-button{
+  background-color: #E0E0E0;
+  border: solid 2px #B00225;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #B00225;
+  height: 54px;
+  width: 100%;
+}

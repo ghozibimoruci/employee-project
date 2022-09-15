@@ -1,0 +1,50 @@
+<div class="employee-page">
+    <div class="employee-title">
+        Employee Form
+    </div>
+    <form #employeeForm="ngForm">
+        <div class="empoyee-form">
+            <div class="w-50">
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="placeholder">First Name</mat-label>
+                    <input matInput type="text" [(ngModel)]="firstName" name="firstName" required>
+                </mat-form-field>
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="placeholder">Last Name</mat-label>
+                    <input matInput type="text" [(ngModel)]="lastName" name="lastName" required>
+                </mat-form-field>
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="placeholder">Email</mat-label>
+                    <input matInput type="text" [(ngModel)]="emailUser" name="emailUser" required>
+                </mat-form-field>
+            </div>
+            <div class="w-50">
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="placeholder">Basic Salary</mat-label>
+                    <input matInput type="text" [(ngModel)]="basicSalary" name="basicSalary" required
+                    oninput="javascript: this.value = this.value.replace(/[^0-9]/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, ',');">
+                </mat-form-field>
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="placeholder">Birth Date</mat-label>
+                    <input matInput [matDatepicker]="picker" [max]="maxDate" [(ngModel)]="birthDate" name="birthDate" (click)="picker.open()" readonly required>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="placeholder">Group</mat-label>
+                    <mat-select [(ngModel)]=userGroup name="userGroup" required>
+                        <mat-option *ngFor="let group of groupList" [value]="group">{{group}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="form-button">
+            <button class="secondary-button" (click)="cancelForm()" type="button">
+                Cancel
+            </button>
+            <button class="primary-button" (click)="submitForm()" type="submit" [disabled]="employeeForm.invalid">
+                Save
+            </button>
+        </div>
+    </form>
+</div>
