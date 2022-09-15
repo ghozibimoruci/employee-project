@@ -13,6 +13,7 @@ import { groupName } from "../../../shared/base-file";
 export class EmployeeFormComponent implements OnInit {
     @ViewChild("employeeForm", null) employeeForm: NgForm;
     @Input('editedEmployee') editedEmployee = null;
+    @Input('existingEmail') existingEmail = [];
     @Output('emitFormEmployee') emitFormEmployee = new EventEmitter;
     userId=-1;
     firstName='';
@@ -26,7 +27,14 @@ export class EmployeeFormComponent implements OnInit {
     ngOnInit(): void {
         setTimeout(()=>{
             this.employeeForm.controls.emailUser.setValidators([
-                Validators.required, Validators.email
+                Validators.required, Validators.email, (control: FormControl)=>{
+                    let inputEmail = control.value;
+                    if(this.existingEmail.includes(inputEmail)){
+                        return {existing: true}
+                    }else{
+                        return null;
+                    }
+                }
             ])
             this.employeeForm.controls.basicSalary.setValidators([
                 Validators.required, (control: FormControl)=>{
@@ -58,7 +66,7 @@ export class EmployeeFormComponent implements OnInit {
     submitForm(){
         this.emitFormEmployee.emit({
             id: this.userId,
-            username: this.emailUser.split('@')[0],
+            username: this.emailUser,
             firstName: this.firstName,
             lastName: this.lastName,
             fullname: this.firstName+' '+this.lastName,

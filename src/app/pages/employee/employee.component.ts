@@ -29,6 +29,7 @@ export class EmployeeComponent implements OnInit {employeeList=[];
     lastNameF = lastNameF;
 
     editedEmployee = null;
+    existingEmail = [];
     showList=true;
     ngOnInit(): void {
         this.generateEmployeeName(this.totalList);
@@ -76,7 +77,7 @@ export class EmployeeComponent implements OnInit {employeeList=[];
         let firstName = this['firstName'+(isMale?'M':'F')][this.getRandomNumber(1, 15) - 1];
         let lastName = this['lastName'+(isMale?'M':'F')][this.getRandomNumber(1, 15) - 1];
         let username = firstName.toLowerCase()+'.'+lastName.toLowerCase();
-        username = this.generateEmployeeUsername(username);
+        username = this.generateEmployeeUsername(username)+'@gmail.com';
         let basicSalary = this.getRandomNumber(8, 26)*1000000;
         let group = groupName[this.getRandomNumber(1, 10) - 1];
         let status = this.getRandomNumber(1, 20) > 18?'inactive':'active';
@@ -86,7 +87,7 @@ export class EmployeeComponent implements OnInit {employeeList=[];
           firstName,
           lastName,
           fullname: firstName+' '+lastName,
-          email: username+'@gmail.com',
+          email: username,
           birthDate,
           birthDateSort, 
           basicSalary,
@@ -125,12 +126,15 @@ export class EmployeeComponent implements OnInit {employeeList=[];
     }
 
     changeForm(theEmployee){
+        this.existingEmail = [];
+        let filteredEmployee = this.baseEmployeeList.filter(emp => emp.id!=(theEmployee?theEmployee.id:-1));
+        this.existingEmail = filteredEmployee.map(emp => emp.email);
         this.editedEmployee = theEmployee;
         this.showList=false;
     }
     
     addEmployee(){
-        this.changeForm(null);
+      this.changeForm(null);
     }
 
     editEmployee(theEmployee){
@@ -139,13 +143,18 @@ export class EmployeeComponent implements OnInit {employeeList=[];
 
     deleteEmployee(theEmployee){
       this.baseEmployeeList = this.baseEmployeeList.filter(emp => emp.id != theEmployee.id);
+      if(this.employeeList.length==1){
+        this.pageList--;
+      }
       this.filterEmpoyeeList();
     }
 
     emitFormEmployee(event){
       if(event){
         if(event.id < 0){
-          event.id = this.baseEmployeeList.length;
+          let lastEmp = this.baseEmployeeList[this.baseEmployeeList.length - 1];
+          let lastIndex = lastEmp.id;
+          event.id = lastIndex+1;
           this.baseEmployeeList.push(event);
         }else{
           let editedIndex = this.baseEmployeeList.findIndex(emp => emp.id == event.id);

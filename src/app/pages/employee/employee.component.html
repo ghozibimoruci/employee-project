@@ -76,4 +76,4 @@
     <pagination [pageIndex]="pageList" [sizeNtotal]="{size: sizeList, total: totalList}" (pageEvent)="changePage($event)"
     ></pagination>
 </div>
-<employee-form *ngIf="!showList" [editedEmployee]="editedEmployee" (emitFormEmployee)="emitFormEmployee($event)"></employee-form>
+<employee-form *ngIf="!showList" [editedEmployee]="editedEmployee" [existingEmail]="existingEmail" (emitFormEmployee)="emitFormEmployee($event)"></employee-form>
