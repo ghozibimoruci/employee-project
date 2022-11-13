@@ -1,0 +1,72 @@
+.employee-page{
+    display: block;
+    padding: 30px 20px;
+}
+.employee-title{
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.tic-tac-field{
+    text-align: center;
+    padding: 6% auto;
+}
+.tic-tac-label{
+    display: block;
+    font-weight: 600;
+    color: #B00225;
+}
+.tic-tac-label.center{
+    text-align: center;
+}
+.tic-tac-input{
+    padding: 8px;
+    border-radius: 8px;
+    border: solid 2px #B00225;
+    outline: #B00225;
+}
+.game-wrapper{
+    width: fit-content;
+    text-align: center;
+    margin: auto;
+}
+.tic-tac-row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.tic-tac-column{
+    width: 30px;
+    border-bottom: solid #B00225;
+    border-right: solid #B00225;
+    height: 30px;
+    line-height: 10px;
+    font-size: 30px;
+}
+.tic-tac-column.row-0{
+    border-top: solid #B00225;
+}
+.tic-tac-column.column-0{
+    border-left: solid #B00225;
+}
+.game-button{
+    outline: none;
+    border: none;
+    background: none;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+}
+.game-text{
+    font-size: 30px;
+    line-height: 26px;
+}
+.reset-game{
+    margin-top: 20px;
+    background-color: #B00225;
+    border: solid 2px #B00225;
+    border-radius: 8px;
+    color: #E0E0E0;
+    font-weight: 600;
+    height: 35px;
+}

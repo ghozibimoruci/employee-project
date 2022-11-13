@@ -1,0 +1,28 @@
+<div class="employee-page">
+    <div class="employee-title">
+        Tic Tac Toe Game
+    </div>
+    <form *ngIf="gameLength<1">
+        <div class="tic-tac-field">
+            <span class="tic-tac-label">
+                Input the Length
+            </span>
+            <input class="tic-tac-input" [(ngModel)]="fieldValue" name="fieldValue" type="text" oninput="javascript: this.value = (parseInt(this.value.replace(/,/g, '')).toString()).replace(/[^0-9]/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, ',');">
+        </div>
+        <button hidden (click)="setGameLength()"></button>
+    </form>
+    <div *ngIf="gameLength>0" class="game-wrapper">
+        <span class="tic-tac-label center">
+            Select Wisely
+        </span>
+        <div *ngFor="let array of gameArray; let i = index;" class="tic-tac-row">
+            <div *ngFor="let data of array; let j = index;" class="tic-tac-column" [ngClass]="'row-'+i+' '+'column-'+j">
+                <button class="game-button" *ngIf="data!='X'&&data!='O'" (click)="clickYourTurn(j, i)">{{data}}</button>
+                <div class="game-text" *ngIf="data=='X'||data=='O'">{{data}}</div>
+            </div>
+        </div>
+        <button class="reset-game" (click)="resetGame()">
+            Reset Game
+        </button>
+    </div>
+</div>

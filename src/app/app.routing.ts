@@ -13,6 +13,10 @@ const routes: Routes = [
     loadChildren: "./pages/employee/employee.module#EmployeeModule"
   },
   {
+    path: 'tic-tac-toe',
+    loadChildren: "./pages/tic-tac-toe/tic-tac-toe.module#TicTacToeModule"
+  },
+  {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full',
