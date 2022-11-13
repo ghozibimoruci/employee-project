@@ -17,8 +17,8 @@
     padding: 16px 16px;
 }
 .add-employee-button{
-    background-color: #B00225;
-    border: solid 2px #B00225;
+    background-color: #6601D1;
+    border: solid 2px #6601D1;
     height: 54px;
     width: 100%;
     border-radius: 8px;
@@ -33,7 +33,7 @@
 .employee-list-wrapper.header{
     font-size: 16px;
     font-weight: 700;
-    background-color: #b00225;
+    background-color: #6601D1;
     color: #E0E0E0;
 }
 .employee-list-wrapper>div{
@@ -59,7 +59,7 @@
     width: 15%;
     min-width: 130px;
     text-align: center;
-    color: #b00225;
+    color: #6601D1;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -76,8 +76,8 @@
     width: calc(100% - 60px);
 }
 .status-wrapper.active{
-    border: #B00225;
-    background-color: #B00225;
+    border: #6601D1;
+    background-color: #6601D1;
     color: #E0E0E0;
 }
 .status-wrapper.inactive{

@@ -1,0 +1,32 @@
+<div class="employee-page" *ngIf="showList">
+    <div class="employee-title">
+        Employee List
+    </div>
+    <div class="employee-list">
+        <div class="employee-wrapper">
+            <div class="add-employee-button">
+                <div class="add-emp-title">Add New Employee</div>
+                <button class="add-icon" (click)="addEmployee()">+</button>
+            </div>
+        </div>
+        <div class="employee-wrapper" *ngFor="let emp of employeeList">
+            <div class="employee-image">
+                <img [src]="emp.imgUrl" alt="">
+            </div>
+            <div class="employee-info">
+                <div class="emp-name">
+                    <button class="edit-emp" (click)="editEmployee(emp)">
+                        {{emp.fullname}}
+                    </button>
+                </div>
+                <div class="emp-phone">
+                    {{emp.phone}}
+                </div>
+                <div class="emp address">
+                    {{emp.address}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<employee-form *ngIf="!showList" [editedEmployee]="editedEmployee" [existingEmail]="existingEmail" (emitFormEmployee)="emitFormEmployee($event)"></employee-form>

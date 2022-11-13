@@ -1,5 +1,5 @@
 .wrapper-login{
-    background: linear-gradient(310deg, white 5%, #B00225 200%);
+    background: linear-gradient(310deg, white 5%, #6601D1 200%);
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -9,7 +9,7 @@
 }
 
 .card{
-    box-shadow: 0 0 8px 0px #B00225;
+    box-shadow: 0 0 8px 0px #6601D1;
     background-color: white;
     border-radius: 8px;
     padding: 30px 20px;
@@ -19,9 +19,9 @@
 
 .web-logo{
     font-size: 110px;
-    background: linear-gradient(160deg, white 5%, #B00225 200%);
-    border: solid 10px #B00225;
-    color: #B00225;
+    background: linear-gradient(160deg, white 5%, #6601D1 200%);
+    border: solid 10px #6601D1;
+    color: #6601D1;
     width: 150px;
     height: 150px;
     text-align: center;
@@ -34,7 +34,7 @@
 }
 
 .input-epsilon{
-    border: solid 1px #B00225;
+    border: solid 1px #6601D1;
     border-radius: 4px;
     padding: 10px 5px;
     width: calc(100% - 20px);
@@ -54,7 +54,7 @@ input.input-epsilon::after{
 }
 
 .button-epsilon{
-    background-color: #B00225;
+    background-color: #6601D1;
     border: none;
     border-radius: 5px;
     width: 100%;
@@ -65,7 +65,7 @@ input.input-epsilon::after{
 }
 
 .snackbar-epsilon{
-    color: #B00225;
+    color: #6601D1;
 }
 
 ::ng-deep #password-login .mat-form-field-subscript-wrapper{

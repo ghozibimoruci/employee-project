@@ -14,7 +14,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
 import { MatSnackBarModule, MatInputModule, MatCheckboxModule, MatDialogModule, MatIconModule,
-  MatProgressSpinnerModule, MatSelectModule, MatOptionModule, MatRadioModule, MatSlideToggleModule, MatRadioGroup, MatRadioButton} from '@angular/material';
+  MatProgressSpinnerModule, MatSelectModule, MatOptionModule, MatRadioModule, MatSlideToggleModule } from '@angular/material';
   import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';

@@ -1,0 +1,50 @@
+<div class="employee-page">
+    <div class="employee-title">
+        Employee Form
+    </div>
+    <form #employeeForm="ngForm">
+        <div class="empoyee-form">
+            <div class="w-60">
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="placeholder">First Name</mat-label>
+                    <input matInput type="text" maxlength="100" [(ngModel)]="firstName" name="firstName" required>
+                </mat-form-field>
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="placeholder">Last Name</mat-label>
+                    <input matInput type="text" maxlength="100" [(ngModel)]="lastName" name="lastName" required>
+                </mat-form-field>
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="placeholder">Phone Number</mat-label>
+                    <input matInput type="text" maxlength="12" [(ngModel)]="phoneNumber" name="phoneNumber" required
+                    oninput="javascript: this.value = this.value.replace(/[^0-9]/g, '').substring(0, 12);">
+                </mat-form-field>
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="placeholder">Location</mat-label>
+                    <mat-select [(ngModel)]=userLocation name="userLocation" required>
+                        <mat-option *ngFor="let location of locationList" [value]="location">{{location}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="w-40">
+                <div class="image-wrapper">
+                    <image-form
+                    [fileToUpload]="theImage1" [logoPath]="imagePath1"
+                    [inputId]="'image1'" (afterDelete)="handleDelete(1)"
+                    (changeImage)="changeImage($event, 1)"></image-form>
+                </div>
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="placeholder">Profile Picture Link</mat-label>
+                    <input matInput type="text" [(ngModel)]="imageUrl" name="imageUrl" [required]="!imagePath1">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="form-button">
+            <button class="secondary-button" (click)="cancelForm()" type="button">
+                Cancel
+            </button>
+            <button class="primary-button" (click)="submitForm()" type="submit" [disabled]="employeeForm.invalid">
+                Save
+            </button>
+        </div>
+    </form>
+</div>

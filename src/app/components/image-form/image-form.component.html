@@ -1,0 +1,30 @@
+<div style="height: 100%;">
+    <div [class]="classNameDrag" [hidden]="fileToUpload||logoPath"
+         draggable="true" (dragover)="changeBorder($event, true)"
+         (dragleave)="changeBorder($event, false)" (drop)="dropFile($event)">
+        <div>
+            <div>
+                <mat-icon class="image-icon"> insert_photo</mat-icon>
+            </div>
+            Drop your image here or <label [for]="inputId" id="labelUpload">browse</label>.
+            <input [id]="inputId" style="display: none;" type="file" accept=".jpg, .jpeg, .png" (change)="handleFileInput($event.target.files)" class="upload-input">
+        </div>
+    </div>
+    <div *ngIf="fileToUpload||logoPath" style="position: relative; height: 100%; border-radius: 10px; border: solid white 2px;">
+        <div [id]="'option-'+inputId" class="option-image" (mouseleave)="actionButtons(true)">
+            <div (click)="replaceImage()">
+                <mat-icon>file_copy</mat-icon>
+                <div>
+                    Replace
+                </div>
+            </div>
+            <div (click)="deleteImage()">
+                <mat-icon>delete</mat-icon>
+                <div>
+                    Delete
+                </div>
+            </div>
+        </div>
+        <img (mouseenter)="actionButtons(false)" [src]="logoPath" class="image-wrapper">
+    </div>
+</div>
