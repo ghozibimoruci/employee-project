@@ -15,7 +15,7 @@
 .tic-tac-label{
     display: block;
     font-weight: 600;
-    color: #B00225;
+    color: #6601D1;
 }
 .tic-tac-label.center{
     text-align: center;
@@ -23,8 +23,8 @@
 .tic-tac-input{
     padding: 8px;
     border-radius: 8px;
-    border: solid 2px #B00225;
-    outline: #B00225;
+    border: solid 2px #6601D1;
+    outline: #6601D1;
 }
 .game-wrapper{
     width: fit-content;
@@ -37,17 +37,17 @@
 }
 .tic-tac-column{
     width: 30px;
-    border-bottom: solid #B00225;
-    border-right: solid #B00225;
+    border-bottom: solid #6601D1;
+    border-right: solid #6601D1;
     height: 30px;
     line-height: 10px;
     font-size: 30px;
 }
 .tic-tac-column.row-0{
-    border-top: solid #B00225;
+    border-top: solid #6601D1;
 }
 .tic-tac-column.column-0{
-    border-left: solid #B00225;
+    border-left: solid #6601D1;
 }
 .game-button{
     outline: none;
@@ -63,8 +63,8 @@
 }
 .reset-game{
     margin-top: 20px;
-    background-color: #B00225;
-    border: solid 2px #B00225;
+    background-color: #6601D1;
+    border: solid 2px #6601D1;
     border-radius: 8px;
     color: #E0E0E0;
     font-weight: 600;

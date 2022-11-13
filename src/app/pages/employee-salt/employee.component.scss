@@ -1,0 +1,93 @@
+.employee-page{
+    display: block;
+    padding: 30px 20px;
+}
+.employee-title{
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.add-employee-button{
+
+    .add-emp-title{
+        color: #6601D1;
+        text-align: center;
+        font-weight: 600;
+        font-size: 18px;
+        word-break: break-word;
+        width: auto;
+        white-space: normal;
+        margin: 50% 0 0;
+    }
+    .add-icon{
+        font-size: 48px;
+        line-height: 85%;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        color: #6601D1;
+        text-align: center;
+        border:solid 2px #6601D1;
+        margin: auto;
+        display: block;
+        background: none;
+        outline: none;
+    }
+}
+.employee-list{
+    display: flex;
+    white-space: nowrap;
+    overflow: auto;
+    padding: 8px 0;
+}
+.employee-wrapper{
+    min-width: 200px;
+    aspect-ratio: 3/4;
+    border: solid 2px #6601D1;
+    border-radius: 10px;
+    margin: 0 5px;
+}
+.employee-image{
+    height: 75%;
+    width: 100%;
+}
+.employee-image>img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+.employee-info{
+    height: 25%;
+    padding: 3px 8px;
+}
+button.edit-emp{
+    background: none;
+    font-weight: 600;
+    line-height: 18px;
+    font-size: 18px;
+    border: none;
+    color: #6601D1;
+    padding: 0;
+}
+button.edit-emp:hover{
+    text-decoration: underline;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #6601D150;
+    border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #6601D1;
+    cursor: pointer;
+}

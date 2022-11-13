@@ -48,3 +48,14 @@ export const parsingArrayToObj = (theArray: Array<any>) => {
     )
     return theObject
 }
+
+export const setAllowedExtention = (extentionArray: Array<string>) => {
+  let newExtentionArray = [];
+  extentionArray.forEach(
+    text => {
+      // newExtentionArray.push(('\\.'+text).toUpperCase());
+      newExtentionArray.push(('\\.'+text).toLowerCase());
+    }
+  )
+  return RegExp(`(${newExtentionArray.join("|")})$`, "i");
+}
